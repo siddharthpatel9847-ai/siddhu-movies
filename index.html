@@ -1,0 +1,720 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIDDHU MOVIES</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#070707;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    height:75px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#090909;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+.search{
+    width:320px;
+    padding:12px 18px;
+    border-radius:25px;
+    border:1px solid #333;
+    background:#171717;
+    color:white;
+    outline:none;
+}
+
+.search:focus{
+    border-color:#e50914;
+}
+
+/* HERO */
+.hero{
+    min-height:500px;
+    padding:90px 7%;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,#070707 10%,rgba(7,7,7,.8),rgba(7,7,7,.15)),
+    linear-gradient(0deg,#070707,transparent);
+}
+
+.hero-content{
+    max-width:680px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e50914;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,90px);
+    line-height:.9;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    color:#aaa;
+    line-height:1.7;
+    font-size:17px;
+    margin-bottom:25px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:7px;
+    background:#e50914;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* MAIN */
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* A-Z */
+.az-title{
+    font-size:25px;
+    margin:35px 0 15px;
+}
+
+.az{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.az button{
+    width:40px;
+    height:40px;
+    border:1px solid #333;
+    border-radius:6px;
+    background:#151515;
+    color:#fff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.az button:hover,
+.az button.active{
+    background:#e50914;
+    border-color:#e50914;
+}
+
+/* UPLOAD */
+.upload{
+    margin:40px 0;
+    padding:30px;
+    border:1px solid #292929;
+    border-radius:15px;
+    background:#111;
+}
+
+.upload h2{
+    margin-bottom:10px;
+}
+
+.upload p{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.file{
+    margin-bottom:15px;
+    color:#aaa;
+}
+
+.upload-btn{
+    border:0;
+    padding:12px 22px;
+    background:#e50914;
+    color:#fff;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* SECTION */
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:35px 0 20px;
+}
+
+.section-head h2{
+    font-size:28px;
+}
+
+.count{
+    color:#777;
+}
+
+/* MOVIES */
+.movies{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(240px,1fr));
+    gap:22px;
+    padding-bottom:60px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#444;
+}
+
+.poster{
+    height:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    radial-gradient(circle at 50% 35%,#333,#111 60%);
+    position:relative;
+}
+
+.poster span{
+    font-size:55px;
+}
+
+.quality{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#e50914;
+    padding:5px 8px;
+    border-radius:4px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.info{
+    padding:16px;
+}
+
+.title{
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.meta{
+    color:#777;
+    font-size:13px;
+}
+
+.watch{
+    display:block;
+    text-align:center;
+    margin-top:14px;
+    padding:10px;
+    background:#222;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.watch:hover{
+    background:#e50914;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid #222;
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .navbar{
+        height:auto;
+        padding:18px 5%;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .hero{
+        min-height:430px;
+        padding:70px 7%;
+    }
+
+    .movies{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .poster{
+        height:230px;
+    }
+
+    .title{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        SIDDHU <span>MOVIES</span>
+    </div>
+
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Search movies..."
+        onkeyup="searchMovies()"
+    >
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            PREMIUM MOVIE LIBRARY
+        </div>
+
+        <h1>
+            SIDDHU<br>
+            <span>MOVIES</span>
+        </h1>
+
+        <p>
+            Your personal cinematic library.
+            Discover, organize and watch your own
+            movies and licensed videos in one place.
+        </p>
+
+        <a href="#library" class="hero-btn">
+            EXPLORE MOVIES
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="container">
+
+<!-- A-Z -->
+<h2 class="az-title">
+    Browse A–Z
+</h2>
+
+<div class="az">
+
+<button onclick="filterLetter('ALL')" class="active">ALL</button>
+<button onclick="filterLetter('A')">A</button>
+<button onclick="filterLetter('B')">B</button>
+<button onclick="filterLetter('C')">C</button>
+<button onclick="filterLetter('D')">D</button>
+<button onclick="filterLetter('E')">E</button>
+<button onclick="filterLetter('F')">F</button>
+<button onclick="filterLetter('G')">G</button>
+<button onclick="filterLetter('H')">H</button>
+<button onclick="filterLetter('I')">I</button>
+<button onclick="filterLetter('J')">J</button>
+<button onclick="filterLetter('K')">K</button>
+<button onclick="filterLetter('L')">L</button>
+<button onclick="filterLetter('M')">M</button>
+<button onclick="filterLetter('N')">N</button>
+<button onclick="filterLetter('O')">O</button>
+<button onclick="filterLetter('P')">P</button>
+<button onclick="filterLetter('Q')">Q</button>
+<button onclick="filterLetter('R')">R</button>
+<button onclick="filterLetter('S')">S</button>
+<button onclick="filterLetter('T')">T</button>
+<button onclick="filterLetter('U')">U</button>
+<button onclick="filterLetter('V')">V</button>
+<button onclick="filterLetter('W')">W</button>
+<button onclick="filterLetter('X')">X</button>
+<button onclick="filterLetter('Y')">Y</button>
+<button onclick="filterLetter('Z')">Z</button>
+
+</div>
+
+
+<!-- UPLOAD -->
+<div class="upload">
+
+<h2>Upload Your Video</h2>
+
+<p>
+Add your own or licensed video files to your library.
+</p>
+
+<input
+    type="file"
+    class="file"
+    id="videoFile"
+    accept="video/*"
+>
+
+<br>
+
+<button
+    class="upload-btn"
+    onclick="uploadDemo()"
+>
+    + ADD VIDEO
+</button>
+
+</div>
+
+
+<!-- LIBRARY -->
+<div class="section-head" id="library">
+
+<h2>Movie Library</h2>
+
+<div class="count" id="count">
+6 titles
+</div>
+
+</div>
+
+
+<div class="movies">
+
+
+<div class="card" data-title="Avengers Endgame">
+
+<div class="poster">
+<div class="quality">HD</div>
+<span>🎬</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Avengers Endgame
+</div>
+
+<div class="meta">
+Action • 2019
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card" data-title="Batman">
+
+<div class="poster">
+<div class="quality">4K</div>
+<span>🦇</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Batman
+</div>
+
+<div class="meta">
+Action • 2022
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card" data-title="Interstellar">
+
+<div class="poster">
+<div class="quality">4K</div>
+<span>🚀</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Interstellar
+</div>
+
+<div class="meta">
+Sci-Fi • 2014
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card" data-title="Joker">
+
+<div class="poster">
+<div class="quality">HD</div>
+<span>🎭</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Joker
+</div>
+
+<div class="meta">
+Drama • 2019
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card" data-title="Spider Man">
+
+<div class="poster">
+<div class="quality">HD</div>
+<span>🕷️</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Spider Man
+</div>
+
+<div class="meta">
+Action • 2021
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card" data-title="Titanic">
+
+<div class="poster">
+<div class="quality">HD</div>
+<span>🚢</span>
+</div>
+
+<div class="info">
+
+<div class="title">
+Titanic
+</div>
+
+<div class="meta">
+Romance • 1997
+</div>
+
+<a href="#" class="watch">
+▶ WATCH
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<footer>
+© 2026 SIDDHU MOVIES • Personal Video Library
+</footer>
+
+
+<script>
+
+function searchMovies(){
+
+let query =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+let visible = 0;
+
+cards.forEach(function(card){
+
+let title =
+card.dataset.title.toLowerCase();
+
+if(title.includes(query)){
+
+card.style.display="block";
+visible++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("count").innerText =
+visible + " titles";
+
+}
+
+
+function filterLetter(letter){
+
+let cards =
+document.querySelectorAll(".card");
+
+let buttons =
+document.querySelectorAll(".az button");
+
+buttons.forEach(function(button){
+button.classList.remove("active");
+});
+
+event.target.classList.add("active");
+
+let visible=0;
+
+cards.forEach(function(card){
+
+let title=card.dataset.title;
+
+if(
+letter==="ALL" ||
+title.toUpperCase().startsWith(letter)
+){
+
+card.style.display="block";
+visible++;
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("count").innerText =
+visible+" titles";
+
+}
+
+
+function uploadDemo(){
+
+let file =
+document.getElementById("videoFile").files[0];
+
+if(!file){
+
+alert("Please select a video first.");
+return;
+
+}
+
+alert(
+"Selected video: "+file.name+
+"\n\nFrontend demo only."
+);
+
+}
+
+</script>
+
+</body>
+</html>
+```
