@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="QEhWvdEBR4f0vlmf_ayeagDsggMyIgSJhcQ53LX4DCE" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>SIDDHU MOVIES</title>
+<title>SIDDHU MOVIES — Premium</title>
 
 <style>
 *{
@@ -16,79 +14,86 @@
 }
 
 body{
-    background:#070707;
+    background:#060606;
     color:#fff;
     font-family:Arial,Helvetica,sans-serif;
 }
 
-/* NAVBAR */
 .navbar{
-    height:75px;
-    padding:0 5%;
+    height:72px;
+    padding:0 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:#090909;
+    background:rgba(5,5,5,.96);
     border-bottom:1px solid #222;
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:100;
 }
 
 .logo{
-    font-size:27px;
+    font-size:25px;
     font-weight:900;
-    letter-spacing:2px;
 }
 
 .logo span{
     color:#e50914;
 }
 
-.search{
-    width:320px;
-    padding:12px 18px;
-    border-radius:25px;
-    border:1px solid #333;
-    background:#171717;
-    color:white;
-    outline:none;
+.nav{
+    display:flex;
+    gap:22px;
+    align-items:center;
 }
 
-.search:focus{
-    border-color:#e50914;
+.nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.nav a:hover{
+    color:#fff;
+}
+
+.login-btn{
+    background:#e50914;
+    color:white!important;
+    padding:10px 18px;
+    border-radius:7px;
 }
 
 /* HERO */
+
 .hero{
-    min-height:500px;
-    padding:90px 7%;
+    min-height:520px;
+    padding:80px 7%;
     display:flex;
     align-items:center;
     background:
-    linear-gradient(90deg,#070707 10%,rgba(7,7,7,.8),rgba(7,7,7,.15)),
-    linear-gradient(0deg,#070707,transparent);
+    radial-gradient(circle at 80% 40%,rgba(229,9,20,.28),transparent 35%),
+    linear-gradient(110deg,#050505,#120000);
 }
 
 .hero-content{
-    max-width:680px;
+    max-width:700px;
 }
 
 .badge{
     display:inline-block;
     background:#e50914;
     padding:7px 14px;
-    border-radius:20px;
+    border-radius:30px;
     font-size:12px;
     font-weight:bold;
-    letter-spacing:1px;
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(48px,8vw,90px);
-    line-height:.9;
-    margin-bottom:25px;
+    font-size:64px;
+    line-height:.98;
+    margin-bottom:22px;
 }
 
 .hero h1 span{
@@ -98,220 +103,304 @@ body{
 .hero p{
     color:#aaa;
     line-height:1.7;
-    font-size:17px;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
-.hero-btn{
-    display:inline-block;
-    padding:14px 25px;
-    border-radius:7px;
-    background:#e50914;
-    color:white;
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 23px;
+    border-radius:8px;
     text-decoration:none;
     font-weight:bold;
 }
 
-/* MAIN */
+.primary{
+    background:#e50914;
+    color:#fff;
+}
+
+.secondary{
+    background:#222;
+    color:#fff;
+}
+
+/* CONTAINER */
+
 .container{
     width:90%;
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
+    padding:50px 0;
 }
 
-/* A-Z */
-.az-title{
-    font-size:25px;
-    margin:35px 0 15px;
+.title{
+    font-size:28px;
+    margin-bottom:25px;
 }
 
-.az{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
+/* SEARCH */
 
-.az button{
-    width:40px;
-    height:40px;
-    border:1px solid #333;
-    border-radius:6px;
+.search{
+    width:100%;
+    padding:16px 20px;
+    border-radius:10px;
+    border:1px solid #292929;
+    outline:none;
     background:#151515;
-    color:#fff;
-    cursor:pointer;
-    font-weight:bold;
+    color:white;
+    font-size:16px;
+    margin-bottom:30px;
 }
 
-.az button:hover,
-.az button.active{
-    background:#e50914;
+.search:focus{
     border-color:#e50914;
 }
 
-/* UPLOAD */
-.upload{
-    margin:40px 0;
-    padding:30px;
-    border:1px solid #292929;
-    border-radius:15px;
-    background:#111;
-}
-
-.upload h2{
-    margin-bottom:10px;
-}
-
-.upload p{
-    color:#777;
-    margin-bottom:20px;
-}
-
-.file{
-    margin-bottom:15px;
-    color:#aaa;
-}
-
-.upload-btn{
-    border:0;
-    padding:12px 22px;
-    background:#e50914;
-    color:#fff;
-    border-radius:7px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* SECTION */
-.section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:35px 0 20px;
-}
-
-.section-head h2{
-    font-size:28px;
-}
-
-.count{
-    color:#777;
-}
-
 /* MOVIES */
-.movies{
+
+.movie-grid{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:22px;
-    padding-bottom:60px;
 }
 
 .card{
     background:#111;
     border:1px solid #222;
-    border-radius:12px;
+    border-radius:14px;
     overflow:hidden;
-    transition:.25s;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-7px);
-    border-color:#444;
+    transform:translateY(-6px);
+    border-color:#e50914;
+    box-shadow:0 15px 40px rgba(229,9,20,.15);
 }
 
 .poster{
-    height:320px;
+    height:300px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:
-    radial-gradient(circle at 50% 35%,#333,#111 60%);
+    background:linear-gradient(145deg,#270000,#090909);
     position:relative;
 }
 
-.poster span{
-    font-size:55px;
+.poster strong{
+    font-size:50px;
+    color:#e50914;
 }
 
-.quality{
+.hd{
     position:absolute;
     top:12px;
-    left:12px;
+    right:12px;
     background:#e50914;
     padding:5px 8px;
-    border-radius:4px;
+    border-radius:5px;
     font-size:11px;
-    font-weight:bold;
 }
 
-.info{
-    padding:16px;
+.card-body{
+    padding:18px;
 }
 
-.title{
-    font-size:17px;
-    font-weight:bold;
+.card-body h3{
     margin-bottom:8px;
 }
 
 .meta{
     color:#777;
     font-size:13px;
+    margin-bottom:15px;
 }
 
 .watch{
     display:block;
     text-align:center;
-    margin-top:14px;
-    padding:10px;
-    background:#222;
+    background:#e50914;
     color:#fff;
     text-decoration:none;
-    border-radius:6px;
+    padding:11px;
+    border-radius:7px;
+    font-weight:bold;
 }
 
-.watch:hover{
+/* PREMIUM */
+
+.premium{
+    margin-top:30px;
+    padding:55px 25px;
+    border:1px solid #3a1111;
+    border-radius:20px;
+    text-align:center;
+    background:
+    radial-gradient(circle,#250000,#090909 65%);
+}
+
+.premium h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.premium h2 span{
+    color:#e50914;
+}
+
+.premium p{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    max-width:900px;
+    margin:auto;
+}
+
+.plan{
+    background:#111;
+    border:1px solid #292929;
+    padding:28px 20px;
+    border-radius:14px;
+}
+
+.plan.featured{
+    border-color:#e50914;
+    box-shadow:0 0 30px rgba(229,9,20,.12);
+}
+
+.plan h3{
+    margin-bottom:12px;
+}
+
+.price{
+    font-size:35px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.price small{
+    font-size:13px;
+    color:#777;
+}
+
+.plan p{
+    font-size:13px;
+    color:#777;
+    margin:8px 0 20px;
+}
+
+.plan button{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:7px;
     background:#e50914;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* LOGIN */
+
+.login-box{
+    max-width:430px;
+    margin:55px auto 0;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:30px;
+}
+
+.login-box h2{
+    margin-bottom:8px;
+}
+
+.login-box p{
+    color:#777;
+    font-size:13px;
+    margin-bottom:22px;
+}
+
+.input{
+    width:100%;
+    padding:13px;
+    margin-bottom:13px;
+    background:#181818;
+    color:white;
+    border:1px solid #292929;
+    border-radius:7px;
+    outline:none;
+}
+
+.login-submit{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:7px;
+    background:#e50914;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* PLAYER */
+
+.player{
+    margin-top:55px;
+}
+
+.player video{
+    width:100%;
+    max-height:650px;
+    display:block;
+    background:#000;
+    border-radius:14px;
 }
 
 /* FOOTER */
+
 footer{
-    border-top:1px solid #222;
+    margin-top:60px;
+    padding:35px;
     text-align:center;
-    padding:30px;
+    border-top:1px solid #222;
     color:#666;
+    font-size:13px;
 }
 
 /* MOBILE */
+
 @media(max-width:700px){
 
-    .navbar{
-        height:auto;
-        padding:18px 5%;
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .search{
-        width:100%;
+    .nav a:not(.login-btn){
+        display:none;
     }
 
     .hero{
-        min-height:430px;
-        padding:70px 7%;
+        padding:60px 6%;
+        min-height:450px;
     }
 
-    .movies{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+    .hero h1{
+        font-size:45px;
+    }
+
+    .plans{
+        grid-template-columns:1fr;
     }
 
     .poster{
-        height:230px;
-    }
-
-    .title{
-        font-size:14px;
+        height:250px;
     }
 }
 </style>
@@ -319,299 +408,237 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+<header class="navbar">
 
-    <div class="logo">
-        SIDDHU <span>MOVIES</span>
-    </div>
+<div class="logo">
+SIDDHU <span>MOVIES</span>
+</div>
 
-    <input
-        type="text"
-        class="search"
-        id="search"
-        placeholder="Search movies..."
-        onkeyup="searchMovies()"
-    >
-
+<nav class="nav">
+<a href="#home">Home</a>
+<a href="#movies">Movies</a>
+<a href="#premium">Premium</a>
+<a href="#login" class="login-btn">LOGIN</a>
 </nav>
 
+</header>
 
-<!-- HERO -->
-<section class="hero">
 
-    <div class="hero-content">
+<section class="hero" id="home">
 
-        <div class="badge">
-            PREMIUM MOVIE LIBRARY
-        </div>
+<div class="hero-content">
 
-        <h1>
-            SIDDHU<br>
-            <span>MOVIES</span>
-        </h1>
+<div class="badge">
+SIDDHU MOVIES PREMIUM
+</div>
 
-        <p>
-            Your personal cinematic library.
-            Discover, organize and watch your own
-            movies and licensed videos in one place.
-        </p>
+<h1>
+YOUR MOVIES.<br>
+YOUR <span>WORLD.</span>
+</h1>
 
-        <a href="#library" class="hero-btn">
-            EXPLORE MOVIES
-        </a>
+<p>
+Watch your personal collection in a clean,
+premium and modern video experience.
+</p>
 
-    </div>
+<div class="hero-buttons">
+
+<a href="#movies" class="btn primary">
+▶ Browse Movies
+</a>
+
+<a href="#premium" class="btn secondary">
+👑 Go Premium
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
-<div class="container">
+<main class="container">
 
-<!-- A-Z -->
-<h2 class="az-title">
-    Browse A–Z
+
+<section id="movies">
+
+<h2 class="title">
+🎬 Movie Collection
 </h2>
 
-<div class="az">
+<input
+id="search"
+class="search"
+placeholder="🔍 Search your movie..."
+onkeyup="searchMovies()"
+>
 
-<button onclick="filterLetter('ALL')" class="active">ALL</button>
-<button onclick="filterLetter('A')">A</button>
-<button onclick="filterLetter('B')">B</button>
-<button onclick="filterLetter('C')">C</button>
-<button onclick="filterLetter('D')">D</button>
-<button onclick="filterLetter('E')">E</button>
-<button onclick="filterLetter('F')">F</button>
-<button onclick="filterLetter('G')">G</button>
-<button onclick="filterLetter('H')">H</button>
-<button onclick="filterLetter('I')">I</button>
-<button onclick="filterLetter('J')">J</button>
-<button onclick="filterLetter('K')">K</button>
-<button onclick="filterLetter('L')">L</button>
-<button onclick="filterLetter('M')">M</button>
-<button onclick="filterLetter('N')">N</button>
-<button onclick="filterLetter('O')">O</button>
-<button onclick="filterLetter('P')">P</button>
-<button onclick="filterLetter('Q')">Q</button>
-<button onclick="filterLetter('R')">R</button>
-<button onclick="filterLetter('S')">S</button>
-<button onclick="filterLetter('T')">T</button>
-<button onclick="filterLetter('U')">U</button>
-<button onclick="filterLetter('V')">V</button>
-<button onclick="filterLetter('W')">W</button>
-<button onclick="filterLetter('X')">X</button>
-<button onclick="filterLetter('Y')">Y</button>
-<button onclick="filterLetter('Z')">Z</button>
+
+<div class="movie-grid">
+
+<div class="card" data-title="My Movie">
+
+<div class="poster">
+
+<strong>SM</strong>
+
+<div class="hd">HD</div>
 
 </div>
 
+<div class="card-body">
 
-<!-- UPLOAD -->
-<div class="upload">
+<h3>My Movie</h3>
 
-<h2>Upload Your Video</h2>
+<div class="meta">
+🎬 HD • Personal Video
+</div>
+
+<a
+href="#player"
+class="watch"
+onclick="scrollPlayer()"
+>
+▶ WATCH NOW
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="premium" id="premium">
+
+<h2>
+👑 <span>PREMIUM</span> MEMBERSHIP
+</h2>
 
 <p>
-Add your own or licensed video files to your library.
+Unlock premium access to your own licensed video collection.
 </p>
 
-<input
-    type="file"
-    class="file"
-    id="videoFile"
-    accept="video/*"
->
+<div class="plans">
 
-<br>
+<div class="plan">
 
-<button
-    class="upload-btn"
-    onclick="uploadDemo()"
->
-    + ADD VIDEO
+<h3>Basic</h3>
+
+<div class="price">
+₹99 <small>/month</small>
+</div>
+
+<p>Premium access for 1 month</p>
+
+<button onclick="selectPlan('Basic')">
+Choose Plan
 </button>
 
 </div>
 
 
-<!-- LIBRARY -->
-<div class="section-head" id="library">
+<div class="plan featured">
 
-<h2>Movie Library</h2>
+<h3>⭐ Popular</h3>
 
-<div class="count" id="count">
-6 titles
+<div class="price">
+₹249 <small>/3 months</small>
 </div>
 
+<p>Premium access for 3 months</p>
+
+<button onclick="selectPlan('Popular')">
+Choose Plan
+</button>
+
 </div>
 
 
-<div class="movies">
+<div class="plan">
 
+<h3>Yearly</h3>
 
-<div class="card" data-title="Avengers Endgame">
-
-<div class="poster">
-<div class="quality">HD</div>
-<span>🎬</span>
+<div class="price">
+₹799 <small>/year</small>
 </div>
 
-<div class="info">
+<p>Premium access for 1 year</p>
 
-<div class="title">
-Avengers Endgame
-</div>
-
-<div class="meta">
-Action • 2019
-</div>
-
-<a href="#" class="watch">
-▶ WATCH
-</a>
+<button onclick="selectPlan('Yearly')">
+Choose Plan
+</button>
 
 </div>
 
 </div>
 
-
-<div class="card" data-title="Batman">
-
-<div class="poster">
-<div class="quality">4K</div>
-<span>🦇</span>
-</div>
-
-<div class="info">
-
-<div class="title">
-Batman
-</div>
-
-<div class="meta">
-Action • 2022
-</div>
-
-<a href="#" class="watch">
-▶ WATCH
-</a>
-
-</div>
-
-</div>
+</section>
 
 
-<div class="card" data-title="Interstellar">
+<section class="login-box" id="login">
 
-<div class="poster">
-<div class="quality">4K</div>
-<span>🚀</span>
-</div>
+<h2>🔐 Member Login</h2>
 
-<div class="info">
+<p>
+Login system will be connected to the secure backend.
+</p>
 
-<div class="title">
-Interstellar
-</div>
+<input
+class="input"
+type="email"
+placeholder="Email address"
+>
 
-<div class="meta">
-Sci-Fi • 2014
-</div>
+<input
+class="input"
+type="password"
+placeholder="Password"
+>
 
-<a href="#" class="watch">
-▶ WATCH
-</a>
+<button
+class="login-submit"
+onclick="loginDemo()"
+>
+LOGIN
+</button>
 
-</div>
-
-</div>
-
-
-<div class="card" data-title="Joker">
-
-<div class="poster">
-<div class="quality">HD</div>
-<span>🎭</span>
-</div>
-
-<div class="info">
-
-<div class="title">
-Joker
-</div>
-
-<div class="meta">
-Drama • 2019
-</div>
-
-<a href="#" class="watch">
-▶ WATCH
-</a>
-
-</div>
-
-</div>
+</section>
 
 
-<div class="card" data-title="Spider Man">
+<section class="player" id="player">
 
-<div class="poster">
-<div class="quality">HD</div>
-<span>🕷️</span>
-</div>
+<h2 class="title">
+▶ Video Player
+</h2>
 
-<div class="info">
+<video controls preload="metadata">
 
-<div class="title">
-Spider Man
-</div>
+<source
+src="videos/movie-web.mp4"
+type="video/mp4"
+>
 
-<div class="meta">
-Action • 2021
-</div>
+Your browser does not support video playback.
 
-<a href="#" class="watch">
-▶ WATCH
-</a>
+</video>
 
-</div>
-
-</div>
+</section>
 
 
-<div class="card" data-title="Titanic">
-
-<div class="poster">
-<div class="quality">HD</div>
-<span>🚢</span>
-</div>
-
-<div class="info">
-
-<div class="title">
-Titanic
-</div>
-
-<div class="meta">
-Romance • 1997
-</div>
-
-<a href="#" class="watch">
-▶ WATCH
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+</main>
 
 
 <footer>
-© 2026 SIDDHU MOVIES • Personal Video Library
+
+<strong>SIDDHU MOVIES</strong>
+<br><br>
+© 2026 Siddhu Movies • Personal / Licensed Content
+
 </footer>
 
 
@@ -621,95 +648,56 @@ function searchMovies(){
 
 let query =
 document.getElementById("search")
-.value
-.toLowerCase();
+.value.toLowerCase();
 
-let cards =
-document.querySelectorAll(".card");
-
-let visible = 0;
-
-cards.forEach(function(card){
+document
+.querySelectorAll(".card")
+.forEach(function(card){
 
 let title =
 card.dataset.title.toLowerCase();
 
-if(title.includes(query)){
-
-card.style.display="block";
-visible++;
-
-}else{
-
-card.style.display="none";
-
-}
+card.style.display =
+title.includes(query)
+? "block"
+: "none";
 
 });
 
-document.getElementById("count").innerText =
-visible + " titles";
-
 }
 
 
-function filterLetter(letter){
+function scrollPlayer(){
 
-let cards =
-document.querySelectorAll(".card");
+setTimeout(function(){
 
-let buttons =
-document.querySelectorAll(".az button");
-
-buttons.forEach(function(button){
-button.classList.remove("active");
+document
+.getElementById("player")
+.scrollIntoView({
+behavior:"smooth"
 });
 
-event.target.classList.add("active");
-
-let visible=0;
-
-cards.forEach(function(card){
-
-let title=card.dataset.title;
-
-if(
-letter==="ALL" ||
-title.toUpperCase().startsWith(letter)
-){
-
-card.style.display="block";
-visible++;
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-document.getElementById("count").innerText =
-visible+" titles";
+},100);
 
 }
 
 
-function uploadDemo(){
-
-let file =
-document.getElementById("videoFile").files[0];
-
-if(!file){
-
-alert("Please select a video first.");
-return;
-
-}
+function selectPlan(plan){
 
 alert(
-"Selected video: "+file.name+
-"\n\nFrontend demo only."
+plan +
+" plan selected.\n\n" +
+"Payment gateway will be connected after merchant/KYC setup."
+);
+
+}
+
+
+function loginDemo(){
+
+alert(
+"Login system is not connected yet.\n\n" +
+"We will connect the secure backend next."
 );
 
 }
@@ -718,4 +706,3 @@ alert(
 
 </body>
 </html>
-```
